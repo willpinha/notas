@@ -1,0 +1,47 @@
+---
+import { getEntry } from "astro:content";
+import Page from "../../components/page.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+	const notas = await getCollection("notas");
+
+	return notas.map((nota) => ({
+		params: { slug: nota.slug },
+		props: { nota },
+	}));
+}
+
+const { nota } = Astro.props;
+const { Content } = await nota.render();
+const { titulo, tags, relacionadas } = nota.data;
+---
+
+<Page title={`Gerais | ${titulo}`}>
+	<article class="prose container">
+		<section class="flex justify-between">
+			<div class="flex gap-3">
+				<a href={`/notas/${nota.slug}/tags`} title="Tags">
+					<i class="ti ti-tags"></i>
+				</a>
+
+				<a
+					href=`/notas/${nota.slug}/relacionadas`
+					title="Notas relacionadas"
+				>
+					<i class="ti ti-circles-relation"></i>
+				</a>
+
+				<a href=`/notas/${nota.slug}/referências` title="Referências">
+					<i class="ti ti-script"></i>
+				</a>
+			</div>
+		</section>
+
+		<hr class="mb-6 mt-2" />
+
+		<h1>{titulo}</h1>
+
+		<Content />
+	</article>
+</Page>

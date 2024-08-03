@@ -1,5 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import Page from "../components/page.astro";
+
+const notas = await getCollection("notas");
+
+console.log(notas);
 ---
 
-<Page title="Eita">Opa</Page>
+<Page title="Todas">
+    <h1>{notas}</h1>
+    <p>Este é um exemplo de página Astro.</p>
+</Page>
