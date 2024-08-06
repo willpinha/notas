@@ -16,6 +16,12 @@
 			"options": {
 				"parser": "astro"
 			}
+		},
+		{
+			"files": "*.markdown",
+			"options": {
+				"parser": "markdown"
+			}
 		}
 	]
 }
