@@ -5,7 +5,7 @@ export const SITE: Site = {
 	author: "Willian Pinheiro",
 	profile: "https://github.com/willpinha",
 	desc: "Minhas notas pessoais sobre tecnologia, programação e outros assuntos",
-	title: "willpinha/notas",
+	title: "Blog do willpinha",
 	ogImage: "astropaper-og.jpg",
 	lightAndDarkMode: false,
 	postPerIndex: 10,
