@@ -67,3 +67,27 @@ import { Provider } from "jotai";
 ```
 
 Isso fará com que uma instância do átomo `countAtom` esteja encapsulada dentro desse provider, ou seja, se tivermos outros componentes que utilizam esse átomo fora do provider, seus estados serão diferentes
+
+# SSR
+
+Para frameworks que utilizam Server Side Rendering (Next.js, Remix, ...), quando queremos passar
+dados carregados do servidor para o cliente e utilizá-los nos átomos como valores iniciais, podemos
+usar a hook `useHydrateAtoms`
+
+Abaixo, um exemplo com Remix:
+
+```tsx
+import { countAtom } from "./atoms";
+
+export async function loader() {
+	return { count: 10 };
+}
+
+export default function Page() {
+	const { count } = useLoaderData<typeof loader>();
+
+	useHydrateAtoms([[countAtom, count]]);
+
+	return <Count />;
+}
+```
