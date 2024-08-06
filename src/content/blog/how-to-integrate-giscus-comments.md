@@ -6,9 +6,9 @@ slug: how-to-integrate-giscus-comments
 featured: true
 draft: false
 tags:
-  - astro
-  - blog
-  - docs
+    - astro
+    - blog
+    - docs
 description: Comment function on a static blog hosted on GitHub Pages with Giscus.
 ---
 
@@ -32,9 +32,9 @@ _Giscus_ can be set up easily on [giscus.app](https://giscus.app/), but I will o
 
 Prequisites to get _Giscus_ working are
 
-- the repository is [public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#making-a-repository-public)
-- the [Giscus app](https://github.com/apps/giscus) is installed
-- the [Discussions](https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository) feature is turned on for your repository
+-   the repository is [public](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#making-a-repository-public)
+-   the [Giscus app](https://github.com/apps/giscus) is installed
+-   the [Discussions](https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository) feature is turned on for your repository
 
 If any of these conditions cannot be fulfilled for any reason, unfortunately, _Giscus_ cannot be integrated.
 
@@ -44,10 +44,10 @@ Next, configuring _Giscus_ is necessary. In most cases, the preselected defaults
 
 However you need to
 
-- select the right language for the UI
-- specify the _GitHub_ repository you want to connect, typically the repository containing your statically hosted _AstroPaper_ blog on _GitHub Pages_
-- create and set an `Announcement` type discussion on _GitHub_ if you want to ensure nobody can create random comments directly on _GitHub_
-- define the color scheme
+-   select the right language for the UI
+-   specify the _GitHub_ repository you want to connect, typically the repository containing your statically hosted _AstroPaper_ blog on _GitHub Pages_
+-   create and set an `Announcement` type discussion on _GitHub_ if you want to ensure nobody can create random comments directly on _GitHub_
+-   define the color scheme
 
 After configuring the settings, _Giscus_ provides you with a generated `<script>` tag, which you will need in the next steps.
 
@@ -57,20 +57,20 @@ You should now have a script tag that looks like this:
 
 ```html
 <script
-  src="https://giscus.app/client.js"
-  data-repo="[ENTER REPO HERE]"
-  data-repo-id="[ENTER REPO ID HERE]"
-  data-category="[ENTER CATEGORY NAME HERE]"
-  data-category-id="[ENTER CATEGORY ID HERE]"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-theme="preferred_color_scheme"
-  data-lang="en"
-  crossorigin="anonymous"
-  async
+	src="https://giscus.app/client.js"
+	data-repo="[ENTER REPO HERE]"
+	data-repo-id="[ENTER REPO ID HERE]"
+	data-category="[ENTER CATEGORY NAME HERE]"
+	data-category-id="[ENTER CATEGORY ID HERE]"
+	data-mapping="pathname"
+	data-strict="0"
+	data-reactions-enabled="1"
+	data-emit-metadata="0"
+	data-input-position="bottom"
+	data-theme="preferred_color_scheme"
+	data-lang="en"
+	crossorigin="anonymous"
+	async
 ></script>
 ```
 
@@ -113,51 +113,54 @@ import { GISCUS } from "@config";
 import { useEffect, useState } from "react";
 
 interface CommentsProps {
-  lightTheme?: Theme;
-  darkTheme?: Theme;
+	lightTheme?: Theme;
+	darkTheme?: Theme;
 }
 
 export default function Comments({
-  lightTheme = "light",
-  darkTheme = "dark",
+	lightTheme = "light",
+	darkTheme = "dark",
 }: CommentsProps) {
-  const [theme, setTheme] = useState(() => {
-    const currentTheme = localStorage.getItem("theme");
-    const browserTheme = window.matchMedia("(prefers-color-scheme: dark)")
-      .matches
-      ? "dark"
-      : "light";
+	const [theme, setTheme] = useState(() => {
+		const currentTheme = localStorage.getItem("theme");
+		const browserTheme = window.matchMedia("(prefers-color-scheme: dark)")
+			.matches
+			? "dark"
+			: "light";
 
-    return currentTheme || browserTheme;
-  });
+		return currentTheme || browserTheme;
+	});
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = ({ matches }: MediaQueryListEvent) => {
-      setTheme(matches ? "dark" : "light");
-    };
+	useEffect(() => {
+		const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+		const handleChange = ({ matches }: MediaQueryListEvent) => {
+			setTheme(matches ? "dark" : "light");
+		};
 
-    mediaQuery.addEventListener("change", handleChange);
+		mediaQuery.addEventListener("change", handleChange);
 
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
+		return () => mediaQuery.removeEventListener("change", handleChange);
+	}, []);
 
-  useEffect(() => {
-    const themeButton = document.querySelector("#theme-btn");
-    const handleClick = () => {
-      setTheme(prevTheme => (prevTheme === "dark" ? "light" : "dark"));
-    };
+	useEffect(() => {
+		const themeButton = document.querySelector("#theme-btn");
+		const handleClick = () => {
+			setTheme(prevTheme => (prevTheme === "dark" ? "light" : "dark"));
+		};
 
-    themeButton?.addEventListener("click", handleClick);
+		themeButton?.addEventListener("click", handleClick);
 
-    return () => themeButton?.removeEventListener("click", handleClick);
-  }, []);
+		return () => themeButton?.removeEventListener("click", handleClick);
+	}, []);
 
-  return (
-    <div className="mt-8">
-      <Giscus theme={theme === "light" ? lightTheme : darkTheme} {...GISCUS} />
-    </div>
-  );
+	return (
+		<div className="mt-8">
+			<Giscus
+				theme={theme === "light" ? lightTheme : darkTheme}
+				{...GISCUS}
+			/>
+		</div>
+	);
 }
 ```
 

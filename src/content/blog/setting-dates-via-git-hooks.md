@@ -6,8 +6,8 @@ title: How to use Git Hooks to set Created and Modified Dates
 featured: false
 draft: false
 tags:
-  - docs
-  - FAQ
+    - docs
+    - FAQ
 canonicalURL: https://smale.codes/posts/setting-dates-via-git-hooks/
 description: How to use Git Hooks to set your Created and Modified Dates on AstroPaper
 ---
@@ -174,13 +174,13 @@ To stop the IDE complaining in the blog engine files I have also done the follow
 
 ```typescript
 export interface Props {
-  title?: string;
-  author?: string;
-  description?: string;
-  ogImage?: string;
-  canonicalURL?: string;
-  pubDatetime?: Date;
-  modDatetime?: Date | null;
+	title?: string;
+	author?: string;
+	description?: string;
+	ogImage?: string;
+	canonicalURL?: string;
+	pubDatetime?: Date;
+	modDatetime?: Date | null;
 }
 ```
 
@@ -190,7 +190,7 @@ export interface Props {
 
 ```typescript
 interface DatetimesProps {
-  pubDatetime: string | Date;
-  modDatetime: string | Date | undefined | null;
+	pubDatetime: string | Date;
+	modDatetime: string | Date | undefined | null;
 }
 ```

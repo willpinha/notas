@@ -5,11 +5,11 @@ title: Customizing AstroPaper theme color schemes
 featured: false
 draft: false
 tags:
-  - color-schemes
-  - docs
+    - color-schemes
+    - docs
 description:
-  How you can enable/disable light & dark mode; and customize color schemes
-  of AstroPaper theme.
+    How you can enable/disable light & dark mode; and customize color schemes
+    of AstroPaper theme.
 ---
 
 This post will explain how you can enable/disable light & dark mode for the website. Moreover, you'll learn how you can customize color schemes of the entire website.
@@ -23,13 +23,13 @@ AstroPaper theme will include light and dark mode by default. In other words, th
 ```js
 // file: src/config.ts
 export const SITE = {
-  website: "https://astro-paper.pages.dev/",
-  author: "Sat Naing",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
-  ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true, // true by default
-  postPerPage: 3,
+	website: "https://astro-paper.pages.dev/",
+	author: "Sat Naing",
+	desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
+	title: "AstroPaper",
+	ogImage: "astropaper-og.jpg",
+	lightAndDarkMode: true, // true by default
+	postPerPage: 3,
 };
 ```
 
@@ -53,9 +53,9 @@ const currentTheme = localStorage.getItem("theme");
 
 The **primaryColorScheme** variable can hold two values\_ `"light"`, `"dark"`. You can leave the empty string (default) if you don't want to specify the primary color scheme.
 
-- `""` - system's prefers-color-scheme. (default)
-- `"light"` - use light mode as primary color scheme.
-- `"dark"` - use dark mode as primary color scheme.
+-   `""` - system's prefers-color-scheme. (default)
+-   `"light"` - use light mode as primary color scheme.
+-   `"dark"` - use dark mode as primary color scheme.
 
 <details><summary>Why 'primaryColorScheme' is not inside config.ts?</summary>
 
@@ -76,24 +76,24 @@ Both light & dark color schemes of AstroPaper theme can be customized. You can d
 @tailwind utilities;
 
 @layer base {
-  :root,
-  html[data-theme="light"] {
-    --color-fill: 251, 254, 251;
-    --color-text-base: 40, 39, 40;
-    --color-accent: 0, 108, 172;
-    --color-card: 230, 230, 230;
-    --color-card-muted: 205, 205, 205;
-    --color-border: 236, 233, 233;
-  }
-  html[data-theme="dark"] {
-    --color-fill: 47, 55, 65;
-    --color-text-base: 230, 230, 230;
-    --color-accent: 26, 217, 217;
-    --color-card: 63, 75, 90;
-    --color-card-muted: 89, 107, 129;
-    --color-border: 59, 70, 85;
-  }
-  /* other styles */
+	:root,
+	html[data-theme="light"] {
+		--color-fill: 251, 254, 251;
+		--color-text-base: 40, 39, 40;
+		--color-accent: 0, 108, 172;
+		--color-card: 230, 230, 230;
+		--color-card-muted: 205, 205, 205;
+		--color-border: 236, 233, 233;
+	}
+	html[data-theme="dark"] {
+		--color-fill: 47, 55, 65;
+		--color-text-base: 230, 230, 230;
+		--color-accent: 26, 217, 217;
+		--color-card: 63, 75, 90;
+		--color-card-muted: 89, 107, 129;
+		--color-border: 59, 70, 85;
+	}
+	/* other styles */
 }
 ```
 
@@ -116,16 +116,16 @@ Here is an example of changing the light color scheme.
 
 ```css
 @layer base {
-  /* lobster color scheme */
-  :root,
-  html[data-theme="light"] {
-    --color-fill: 246, 238, 225;
-    --color-text-base: 1, 44, 86;
-    --color-accent: 225, 74, 57;
-    --color-card: 220, 152, 145;
-    --color-card-muted: 233, 119, 106;
-    --color-border: 220, 152, 145;
-  }
+	/* lobster color scheme */
+	:root,
+	html[data-theme="light"] {
+		--color-fill: 246, 238, 225;
+		--color-text-base: 1, 44, 86;
+		--color-accent: 225, 74, 57;
+		--color-card: 220, 152, 145;
+		--color-card-muted: 233, 119, 106;
+		--color-border: 220, 152, 145;
+	}
 }
 ```
 

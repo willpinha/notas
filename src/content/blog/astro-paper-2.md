@@ -6,7 +6,7 @@ slug: astro-paper-2
 featured: false
 ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png
 tags:
-  - release
+    - release
 description: AstroPaper with the enhancements of Astro v2. Type-safe markdown contents, bug fixes and better dev experience etc.
 ---
 
@@ -61,11 +61,11 @@ If a blog post doesn't have any tag (in other words, frontmatter property `tags`
 ```ts
 // src/contents/_schemas.ts
 export const blogSchema = z.object({
-  // ---
-  // replace "others" with whatever you want
-  tags: z.array(z.string()).default(["others"]),
-  ogImage: z.string().optional(),
-  description: z.string(),
+	// ---
+	// replace "others" with whatever you want
+	tags: z.array(z.string()).default(["others"]),
+	ogImage: z.string().optional(),
+	description: z.string(),
 });
 ```
 
@@ -85,7 +85,7 @@ All the [#docs](https://astro-paper.pages.dev/tags/docs/) blog posts and [README
 
 ## Bug Fixes
 
-- fix broken tags in the Blog Post page
-- in a tag page, the last part of the breadcrumb is now updated to lower-case for consistency
-- exclude draft posts in a tag page
-- fix 'onChange value not updating issue' after a page reload
+-   fix broken tags in the Blog Post page
+-   in a tag page, the last part of the breadcrumb is now updated to lower-case for consistency
+-   exclude draft posts in a tag page
+-   fix 'onChange value not updating issue' after a page reload

@@ -6,8 +6,8 @@ slug: dynamic-og-image-generation-in-astropaper-blog-posts
 featured: false
 draft: false
 tags:
-  - docs
-  - release
+    - docs
+    - release
 description: New feature in AstroPaper v1.4.0, introducing dynamic OG image generation for blog posts.
 ---
 
@@ -33,8 +33,8 @@ In AstroPaper v1.4.0, Vercel's [Satori](https://github.com/vercel/satori) packag
 
 Dynamic OG images will be generated at build time for blog posts that
 
-- don't include OG image in the frontmatter
-- are not marked as draft.
+-   don't include OG image in the frontmatter
+-   are not marked as draft.
 
 ## Anatomy of AstroPaper dynamic OG image
 
@@ -49,32 +49,32 @@ Titles with non-latin characters won't display properly out of the box. To resol
 // file: loadGoogleFont.ts
 
 async function loadGoogleFonts(
-  text: string
+	text: string
 ): Promise<
-  Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
+	Array<{ name: string; data: ArrayBuffer; weight: number; style: string }>
 > {
-  const fontsConfig = [
-    {
-      name: "Noto Sans JP",
-      font: "Noto+Sans+JP",
-      weight: 400,
-      style: "normal",
-    },
-    {
-      name: "Noto Sans JP",
-      font: "Noto+Sans+JP:wght@700",
-      weight: 700,
-      style: "normal",
-    },
-    { name: "Noto Sans", font: "Noto+Sans", weight: 400, style: "normal" },
-    {
-      name: "Noto Sans",
-      font: "Noto+Sans:wght@700",
-      weight: 700,
-      style: "normal",
-    },
-  ];
-  // other codes
+	const fontsConfig = [
+		{
+			name: "Noto Sans JP",
+			font: "Noto+Sans+JP",
+			weight: 400,
+			style: "normal",
+		},
+		{
+			name: "Noto Sans JP",
+			font: "Noto+Sans+JP:wght@700",
+			weight: 700,
+			style: "normal",
+		},
+		{ name: "Noto Sans", font: "Noto+Sans", weight: 400, style: "normal" },
+		{
+			name: "Noto Sans",
+			font: "Noto+Sans:wght@700",
+			weight: 700,
+			style: "normal",
+		},
+	];
+	// other codes
 }
 ```
 
@@ -84,5 +84,5 @@ async function loadGoogleFonts(
 
 At the time of writing this, [Satori](https://github.com/vercel/satori) is fairly new and has not reached major release yet. So, there are still some limitations to this dynamic OG image feature.
 
-- Besides, RTL languages are not supported yet.
-- [Using emoji](https://github.com/vercel/satori#emojis) in the title might be a little bit tricky.
+-   Besides, RTL languages are not supported yet.
+-   [Using emoji](https://github.com/vercel/satori#emojis) in the title might be a little bit tricky.

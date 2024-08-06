@@ -6,13 +6,13 @@ slug: how-do-i-develop-my-portfolio-and-blog
 featured: false
 draft: false
 tags:
-  - NextJS
-  - TailwindCSS
-  - HeadlessCMS
-  - Blog
+    - NextJS
+    - TailwindCSS
+    - HeadlessCMS
+    - Blog
 description:
-  "EXAMPLE POST: My experience about developing my first portfolio website and a blog
-  using NextJS and a headless CMS."
+    "EXAMPLE POST: My experience about developing my first portfolio website and a blog
+    using NextJS and a headless CMS."
 ---
 
 > This article is originally from my [blog post](https://satnaing.dev/blog/posts/how-do-i-develop-my-portfolio-and-blog). I put this article to demonstrate how you can write blog posts/articles using AstroPaper theme.
@@ -41,11 +41,11 @@ Images and assets are uploaded and stored in [Cloudinary](https://cloudinary.com
 
 In conclusion, these are the tech stack I've used for this project.
 
-- Front-end: NextJS (TypeScript)
-- Styling: TailwindCSS
-- Animations: GSAP
-- CMS: Forestry Headless CMS
-- Deployment: Vercel
+-   Front-end: NextJS (TypeScript)
+-   Styling: TailwindCSS
+-   Animations: GSAP
+-   CMS: Forestry Headless CMS
+-   Deployment: Vercel
 
 ## Features
 
@@ -99,6 +99,6 @@ And... last but not least, I would like to say 'thanks' to my friend [Swann Fevi
 
 ## Project Links
 
-- Website: [https://satnaing.dev/](https://satnaing.dev/ "https://satnaing.dev/")
-- Blog: [https://satnaing.dev/blog](https://satnaing.dev/blog "https://satnaing.dev/blog")
-- Repo: [https://github.com/satnaing/my-portfolio](https://github.com/satnaing/my-portfolio "https://github.com/satnaing/my-portfolio")
+-   Website: [https://satnaing.dev/](https://satnaing.dev/ "https://satnaing.dev/")
+-   Blog: [https://satnaing.dev/blog](https://satnaing.dev/blog "https://satnaing.dev/blog")
+-   Repo: [https://github.com/satnaing/my-portfolio](https://github.com/satnaing/my-portfolio "https://github.com/satnaing/my-portfolio")

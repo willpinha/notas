@@ -6,14 +6,14 @@ slug: how-do-i-develop-my-terminal-portfolio-website-with-react
 featured: false
 draft: false
 tags:
-  - JavaScript
-  - ReactJS
-  - ContextAPI
-  - Styled-Components
-  - TypeScript
+    - JavaScript
+    - ReactJS
+    - ContextAPI
+    - Styled-Components
+    - TypeScript
 description:
-  "EXAMPLE POST: Developing a terminal-like website using ReactJS, TypeScript and Styled-Components.
-  Includes features like autocomplete, multiple themes, command hints etc."
+    "EXAMPLE POST: Developing a terminal-like website using ReactJS, TypeScript and Styled-Components.
+    Includes features like autocomplete, multiple themes, command hints etc."
 ---
 
 > This article is originally from my [blog post](https://satnaing.dev/blog/posts/how-do-i-develop-my-terminal-portfolio-website-with-react). I put this article to demonstrate how you can write blog posts/articles using AstroPaper theme.
@@ -32,9 +32,9 @@ Recently, I've developed and published my portfolio + a blog. I’m glad I got s
 
 This project is a frontend project without any backend codes. The UI/UX part is designed in Figma. For the frontend user-interface, I chose React over pain JavaScript and NextJS. Why?
 
-- Firstly, I want to write declarative code. Managing HTML DOM using JavaScript imperatively is really tedious.
-- Secondly, because it is React!!! It is fast, and reliable.
-- Lastly, I don’t need much of the SEO features, routing and image optimization provided by NextJS.
+-   Firstly, I want to write declarative code. Managing HTML DOM using JavaScript imperatively is really tedious.
+-   Secondly, because it is React!!! It is fast, and reliable.
+-   Lastly, I don’t need much of the SEO features, routing and image optimization provided by NextJS.
 
 And of course there's TypeScript for type checking.
 
@@ -44,11 +44,11 @@ This project doesn’t need very complex state management. I just use ContextAPI
 
 Here’s a quick recap for the tech stack.
 
-- Frontend: [ReactJS](https://reactjs.org/ "React Website"), [TypeScript](https://www.typescriptlang.org/ "TypeScript Website")
-- Styling: [Styled-Components](https://styled-components.com/ "Styled-Components Website")
-- UI/UX: [Figma](https://figma.com/ "Figma Website")
-- State Management: [ContextAPI](https://reactjs.org/docs/context.html "React ContextAPI")
-- Deployment: [Netlify](https://www.netlify.com/ "Netlify Website")
+-   Frontend: [ReactJS](https://reactjs.org/ "React Website"), [TypeScript](https://www.typescriptlang.org/ "TypeScript Website")
+-   Styling: [Styled-Components](https://styled-components.com/ "Styled-Components Website")
+-   UI/UX: [Figma](https://figma.com/ "Figma Website")
+-   State Management: [ContextAPI](https://reactjs.org/docs/context.html "React ContextAPI")
+-   Deployment: [Netlify](https://www.netlify.com/ "Netlify Website")
 
 ## Features
 
@@ -84,5 +84,5 @@ This is a really fun project, and one special part of this project is I had to f
 
 ## Project Links
 
-- Website: [https://terminal.satnaing.dev/](https://terminal.satnaing.dev/ "https://terminal.satnaing.dev/")
-- Repo: [https://github.com/satnaing/terminal-portfolio](https://github.com/satnaing/terminal-portfolio "https://github.com/satnaing/terminal-portfolio")
+-   Website: [https://terminal.satnaing.dev/](https://terminal.satnaing.dev/ "https://terminal.satnaing.dev/")
+-   Repo: [https://github.com/satnaing/terminal-portfolio](https://github.com/satnaing/terminal-portfolio "https://github.com/satnaing/terminal-portfolio")
